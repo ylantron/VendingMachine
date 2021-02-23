@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buy_drink">Buy</string>
+
+    <string name="successful_drink_buy_message">Drink bought</string>
+</resources>

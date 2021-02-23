@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_drink">Update</string>
+    <string name="add_drink">Add</string>
+
+    <string name="successful_drink_add_message">Drink added</string>
+
+    <string name="successful_drink_edit_message">Drink edited</string>
+
+    <string name="successful_drink_delete_message">Drink deleted</string>
+
+    <!-- errors -->
+    <string name="enter_drink_information_error">Enter the drink %1$s</string>
+    <string name="enter_drink_cost_or_quantity_not_positive">The drink %1$s must be positive</string>
+
+    <string name="error_drink_add_message">Error while adding drink</string>
+    <string name="error_drink_edit_message">Error while updating drink</string>
+    <string name="error_drink_delete_message">Error while deleting drink</string>
+</resources>

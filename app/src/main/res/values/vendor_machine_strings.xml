@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_username">Welcome %1$s</string>
+
+    <string name="drink_name">Name</string>
+    <string name="drink_cost">Cost</string>
+    <string name="drink_quantity">Quantity</string>
+    <string name="drink_actions">Actions</string>
+
+    <string name="no_drinks_found">Whooops!\nLooks like there\'s no drink here :/</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Vending Machine - Ylan Anderson</string>
+
+    <string name="guest_name">Guest</string>
+
+    <string name="unknown_action">Unknown Action</string>
+</resources>

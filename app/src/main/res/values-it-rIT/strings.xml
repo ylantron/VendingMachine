@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Distributore Automatico - Ylan Anderson</string>
+    <string name="enter_password_label">Digita il tuo nome utente per accedere al menu di sistema.\nSpunta \"Continua come ospite\" per comprare qualcosa.</string>
+    <string name="enter_password_edit_text_hint">Digita il Nome Utente</string>
+    <string name="continue_as_guest_checkbox_label">Continua come ospite</string>
+    <string name="empty_username_error">Digita un nome utente!</string>
+    <string name="drink_name">Nome</string>
+    <string name="drink_cost">Costo</string>
+    <string name="drink_quantity">Quantità</string>
+    <string name="welcome_username">Benvenuto %1$s</string>
+    <string name="drinks_initialized_chip_message">Il distributore automatico ora ha bibite da vendere</string>
+    <string name="guest_name">Ospite</string>
+    <string name="update_drink">Aggiorna</string>
+    <string name="add_drink">Aggiungi</string>
+    <string name="successful_drink_add_message">Bibita aggiunta</string>
+    <string name="error_drink_add_message">Errore durante l\'aggiunta della bibita</string>
+    <string name="unknown_action">Azione Sconosciuta</string>
+    <string name="drink_actions">Azioni</string>
+    <string name="buy_drink">Compra</string>
+    <string name="enter_drink_information_error">Digita %1$s della bibita</string>
+    <string name="enter_drink_cost_or_quantity_not_positive">%1$s della bibita deve essere positivo</string>
+    <string name="successful_drink_edit_message">Bibita modificata</string>
+    <string name="successful_drink_delete_message">Bibita eliminata</string>
+    <string name="successful_drink_buy_message">Bibita comprata</string>
+    <string name="error_drink_edit_message">Errore durante la modifica della bibita</string>
+    <string name="error_drink_delete_message">Errore durante la cancellazione della bibita</string>
+    <string name="no_drinks_found">Whooops!\nSembra che non ci sono bibite qui :/</string>
+</resources>

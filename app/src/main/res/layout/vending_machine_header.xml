@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- TOOLBAR -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/welcome_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/welcomeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_username" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcome_toolbar">
+
+        <TextView
+            android:id="@+id/drink_header_drink_name"
+            android:layout_width="@dimen/drink_name_dimension"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/drink_name" />
+
+        <TextView
+            android:id="@+id/drink_header_drink_cost"
+            android:layout_width="@dimen/drink_cost_dimension"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/drink_header_drink_name"
+            android:padding="10dp"
+            android:text="@string/drink_cost" />
+
+        <TextView
+            android:id="@+id/drink_header_drink_quantity"
+            android:layout_width="@dimen/drink_quantity_dimension"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/drink_header_drink_cost"
+            android:padding="10dp"
+            android:text="@string/drink_quantity" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/drink_header_drink_quantity"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="@string/drink_actions" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

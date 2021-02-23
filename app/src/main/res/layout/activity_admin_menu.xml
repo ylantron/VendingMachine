@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminMenuActivity">
+
+    <!-- HEADER -->
+    <include
+        android:id="@+id/drink_header"
+        layout="@layout/vending_machine_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- HEADER END -->
+
+    <!-- NO RESULT FOUND -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/no_results_found"
+        app:layout_constraintBottom_toTopOf="@id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/drink_header">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25"
+            app:srcCompat="@drawable/noresultsfound" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/no_drinks_found"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- LIST VIEW -->
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@android:id/list"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/drink_header"
+
+        android:visibility="gone"/>
+
+
+    <!-- INSERT DRINK ELEMENTS -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/add_drink_name_edit_text"
+            android:layout_width="@dimen/drink_name_dimension"
+            android:layout_height="wrap_content"
+            android:hint="@string/drink_name"
+            android:autofillHints="@string/drink_name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/add_drink_cost_edit_text"
+            android:layout_width="@dimen/drink_cost_dimension"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/add_drink_name_edit_text"
+            android:hint="@string/drink_cost"
+            android:autofillHints="@string/drink_cost"
+            android:inputType="numberDecimal"
+            android:layout_toEndOf="@id/add_drink_name_edit_text" />
+
+        <EditText
+            android:id="@+id/add_drink_quantity_edit_text"
+            android:layout_width="@dimen/drink_quantity_dimension"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/add_drink_cost_edit_text"
+            android:hint="@string/drink_quantity"
+            android:autofillHints="@string/drink_quantity"
+
+            android:inputType="number"
+            android:layout_toEndOf="@id/add_drink_cost_edit_text" />
+
+        <Button
+            android:id="@+id/add_drink_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+
+
+            android:layout_centerHorizontal="true"
+            android:text="@string/add_drink"
+            android:layout_alignParentEnd="true"
+            tools:ignore="RelativeOverlap" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
