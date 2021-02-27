@@ -13,15 +13,15 @@ public abstract class AbstractDao extends SQLiteOpenHelper {
         super(context, name, factory, version);
     } ========================================================= */
 
-    public AbstractDao(@Nullable Context context, @Nullable String tableName) {
-        super(context, tableName, null, 1);
+    public AbstractDao(@Nullable Context context, @Nullable String name, int version) {
+        super(context, name, null, version);
     }
 
     @Override
     public abstract void onCreate(SQLiteDatabase db);
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // EMPTY
-    }
+    public abstract void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion);
+
+    protected abstract String getDatabaseCreateQuery(String databaseName);
 }

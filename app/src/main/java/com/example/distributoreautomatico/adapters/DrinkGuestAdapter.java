@@ -27,8 +27,8 @@ public class DrinkGuestAdapter extends BaseAdapter {
         this.CONTEXT = context;
         this.drinks = drinks;
 
-        this.daoDrink = new DaoDrink(CONTEXT);
-        this.daoProfit = new DaoProfit(CONTEXT);
+        this.daoDrink = DaoDrink.getInstance(CONTEXT);
+        this.daoProfit = DaoProfit.getInstance(CONTEXT);
     }
 
     /**

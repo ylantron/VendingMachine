@@ -28,7 +28,7 @@ public class DrinkAdminAdapter extends BaseAdapter {
         this.CONTEXT = context;
         this.drinks = drinks;
 
-        this.daoDrink = new DaoDrink(CONTEXT);
+        this.daoDrink = DaoDrink.getInstance(CONTEXT);
     }
 
     /**

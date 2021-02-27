@@ -23,13 +23,13 @@ public class GuestMenuActivity extends AppCompatActivity {
         welcomeTextView.setText(getString(R.string.welcome_username, getIntent().getStringExtra("username")));
 
         // creating a dao for drinks
-        DaoDrink daoDrink  = new DaoDrink(getApplicationContext());
+        DaoDrink daoDrink  = DaoDrink.getInstance(getApplicationContext());
 
         // removing the "no results found" view if there are drinks in the database
         ConstraintLayout noResultsFound = findViewById(R.id.no_results_found);
         ListView drinksListView = findViewById(android.R.id.list);
 
-        if (!daoDrink.isEmpty()) {
+        if (daoDrink.isNotEmpty()) {
             noResultsFound.setVisibility(View.GONE);
             drinksListView.setVisibility(View.VISIBLE);
         }

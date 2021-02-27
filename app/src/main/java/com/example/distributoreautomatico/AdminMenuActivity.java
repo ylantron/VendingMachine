@@ -26,13 +26,13 @@ public class AdminMenuActivity extends AppCompatActivity {
         welcomeTextView.setText(getString(R.string.welcome_username, getIntent().getStringExtra("username")));
 
         // creating a dao for drinks
-        DaoDrink daoDrink = new DaoDrink(getApplicationContext());
+        DaoDrink daoDrink = DaoDrink.getInstance(getApplicationContext());
 
         // removing the "no results found" view if there are drinks in the database
         ConstraintLayout noResultsFound = findViewById(R.id.no_results_found);
         ListView drinksListView = findViewById(android.R.id.list);
 
-        if (!daoDrink.isEmpty()) {
+        if (daoDrink.isNotEmpty()) {
             noResultsFound.setVisibility(View.GONE);
             drinksListView.setVisibility(View.VISIBLE);
         }
@@ -67,7 +67,7 @@ public class AdminMenuActivity extends AppCompatActivity {
         int drinkQuantity = Integer.parseInt(drinkQuantityStr);
 
         // instantiate a dao for drinks
-        DaoDrink daoDrink = new DaoDrink(getApplicationContext());
+        DaoDrink daoDrink = DaoDrink.getInstance(getApplicationContext());
 
         // build a new drink with the edit text information
         Drink drink = new Drink(drinkName, drinkQuantity, drinkCost);

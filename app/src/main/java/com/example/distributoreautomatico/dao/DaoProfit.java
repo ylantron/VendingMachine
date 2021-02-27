@@ -15,16 +15,41 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class DaoProfit extends AbstractDao {
-    private final static String TABLE_NAME = "profit";
+public final class DaoProfit extends AbstractDao {
+    private static DaoProfit instance = null;
+    private final static String DATABASE_NAME = "profit";
+    private static final int DATABASE_VERSION = 1;
 
-    public DaoProfit(@Nullable Context context) {
-        super(context, TABLE_NAME);
+    private DaoProfit(@Nullable Context context) { super(context, DATABASE_NAME, DATABASE_VERSION); }
+    public static DaoProfit getInstance(Context context) {
+        if (instance == null)
+            instance = new DaoProfit(context);
+
+        return instance;
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (id INTEGER PRIMARY KEY AUTOINCREMENT, drink_id INTEGER NOT NULL, cost REAL NOT NULL, date DATETIME DEFAULT CURRENT_TIMESTAMP);");
+        db.execSQL(getDatabaseCreateQuery(DATABASE_NAME));
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // OTHER IF UNTIL WE GET TO THE CURRENT DATABASE VERSION
+    }
+
+    protected String getDatabaseCreateQuery(String databaseName) {
+        return String.format(
+                "CREATE TABLE %s (" +
+                        "id INTEGER PRIMARY KEY," +
+                        "drink_id INTEGER NOT NULL" +
+                        "cost REAL NOT NULL," +
+                        "date DATETIME DEFAULT CURRENT_TIMESTAMP" +
+                ");",
+
+                // parameters in String.format()
+                databaseName
+        );
     }
 
     public int size() {
@@ -32,7 +57,7 @@ public class DaoProfit extends AbstractDao {
         SQLiteDatabase db = getReadableDatabase();
 
         // get the count of the rows from the table
-        Cursor resultSet = db.rawQuery("SELECT COUNT(*) AS count FROM " + TABLE_NAME, null);
+        Cursor resultSet = db.rawQuery("SELECT COUNT(*) AS count FROM " + DATABASE_NAME, null);
         int rows = 0;
 
         // save the result into the rows variable
@@ -48,6 +73,11 @@ public class DaoProfit extends AbstractDao {
     }
 
     @SuppressWarnings("unused")
+    public boolean isNotEmpty() {
+        // return true if there are no rows in the table
+        return !isEmpty();
+    }
+
     public boolean isEmpty() {
         // return true if there are no rows in the table
         return size() <= 0;
@@ -64,7 +94,7 @@ public class DaoProfit extends AbstractDao {
         while (resultSet.moveToNext()) {
             try {
                 date = sdf.parse(resultSet.getString(resultSet.getColumnIndex("now")));
-            } catch (ParseException parseException) {}
+            } catch (ParseException ignored) {}
         }
 
         resultSet.close();
@@ -75,7 +105,7 @@ public class DaoProfit extends AbstractDao {
 
         try {
             convertDateTime = sdf.parse(convertedDateTime);
-        } catch (ParseException parseException) {}
+        } catch (ParseException ignored) {}
         return convertDateTime;
     }
 
@@ -86,7 +116,7 @@ public class DaoProfit extends AbstractDao {
         contentValues.put("drink_id", drink.getId());
         contentValues.put("cost", drink.getCost());
 
-        long result = db.insert(TABLE_NAME, null, contentValues);
+        long result = db.insert(DATABASE_NAME, null, contentValues);
 
         return result != -1;
     }
