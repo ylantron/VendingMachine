@@ -42,7 +42,7 @@ public final class DaoProfit extends AbstractDao {
         return String.format(
                 "CREATE TABLE %s (" +
                         "id INTEGER PRIMARY KEY," +
-                        "drink_id INTEGER NOT NULL" +
+                        "drink_id INTEGER NOT NULL," +
                         "cost REAL NOT NULL," +
                         "date DATETIME DEFAULT CURRENT_TIMESTAMP" +
                 ");",
