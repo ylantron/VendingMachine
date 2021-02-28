@@ -10,7 +10,8 @@
         android:id="@+id/drink_name_edit_text"
         android:inputType="text"
         android:hint="@string/drink_name"
-        android:autofillHints="@string/drink_name" />
+        android:autofillHints="@string/drink_name"
+        android:theme="@style/purple_edit_text"/>
 
     <EditText
         android:layout_width="@dimen/drink_cost_dimension"
@@ -19,7 +20,9 @@
         android:inputType="numberDecimal"
         android:hint="@string/drink_cost"
         android:autofillHints="@string/drink_cost"
-        android:layout_toRightOf="@id/drink_name_edit_text"/>
+        android:layout_toRightOf="@id/drink_name_edit_text"
+        android:layout_toEndOf="@id/drink_name_edit_text"
+        android:theme="@style/purple_edit_text"/>
 
     <EditText
         android:layout_width="@dimen/drink_quantity_dimension"
@@ -28,19 +31,25 @@
         android:inputType="number"
         android:hint="@string/drink_quantity"
         android:autofillHints="@string/drink_quantity"
-        android:layout_toRightOf="@id/drink_cost_edit_text"/>
+        android:layout_toRightOf="@id/drink_cost_edit_text"
+        android:layout_toEndOf="@id/drink_cost_edit_text"
+        android:theme="@style/purple_edit_text"/>
 
     <ImageButton
         android:id="@+id/drink_edit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/drink_delete_button"
-        android:src="@android:drawable/ic_menu_edit" />
+        android:layout_toStartOf="@id/drink_delete_button"
+        android:src="@android:drawable/ic_menu_edit"
+        android:contentDescription="@string/edit_button_image_content_description"/>
 
     <ImageButton
         android:id="@+id/drink_delete_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:src="@android:drawable/ic_menu_delete" />
+        android:layout_alignParentEnd="true"
+        android:src="@android:drawable/ic_menu_delete"
+        android:contentDescription="@string/delete_button_image_content_description"/>
 </RelativeLayout>

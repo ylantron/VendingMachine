@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="purple_edit_text" parent="Widget.AppCompat.EditText">
+    <style name="purple_edit_text">
         <item name="colorControlActivated">#FF6200EE</item>
     </style>
 </resources>

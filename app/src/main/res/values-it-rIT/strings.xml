@@ -26,4 +26,8 @@
     <string name="error_drink_edit_message">Errore durante la modifica della bibita</string>
     <string name="error_drink_delete_message">Errore durante la cancellazione della bibita</string>
     <string name="no_drinks_found">Whooops!\nSembra che non ci sono bibite qui :/</string>
+    <string name="no_drinks_found_image_content_description">Nessuna bibita trovata</string>
+    <string name="edit_button_image_content_description">Modifica</string>
+    <string name="delete_button_image_content_description">Elimina</string>
+    <string name="buy_button_image_content_description">Compra</string>
 </resources>

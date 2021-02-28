@@ -8,4 +8,5 @@
     <string name="drink_actions">Actions</string>
 
     <string name="no_drinks_found">Whooops!\nLooks like there\'s no drink here :/</string>
+    <string name="no_drinks_found_image_content_description">No drinks found</string>
 </resources>

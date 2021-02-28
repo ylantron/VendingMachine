@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -15,17 +16,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Adding a click listener on the login button
-        Button loginButton = findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(v -> login());
-
-        // Adding a click listener on the guest checkbox
-        CheckBox continueAsGuestCheckbox = findViewById(R.id.continueAsGuestCheckbox);
-        continueAsGuestCheckbox.setOnClickListener(v -> checkboxBehaviour());
     }
 
-    private void login() {
+    public void login(View v) {
         // get username edit text and guest checkbox
         EditText usernameEditText = findViewById(R.id.usernameEditText);
         CheckBox continueAsGuestCheckbox = findViewById(R.id.continueAsGuestCheckbox);
@@ -50,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void checkboxBehaviour() {
+    public void checkboxBehaviour(View v) {
         // get username edit text and guest checkbox
         EditText usernameEditText = findViewById(R.id.usernameEditText);
         CheckBox continueAsGuestCheckbox = findViewById(R.id.continueAsGuestCheckbox);

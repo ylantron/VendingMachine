@@ -36,7 +36,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.25"
-            app:srcCompat="@drawable/noresultsfound" />
+            app:srcCompat="@drawable/noresultsfound"
+            android:contentDescription="@string/no_drinks_found_image_content_description" />
 
         <TextView
             android:id="@+id/textView"
@@ -80,7 +81,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/drink_name"
             android:autofillHints="@string/drink_name"
-            android:inputType="text" />
+            android:inputType="text"
+            android:theme="@style/purple_edit_text" />
 
         <EditText
             android:id="@+id/add_drink_cost_edit_text"
@@ -90,7 +92,8 @@
             android:hint="@string/drink_cost"
             android:autofillHints="@string/drink_cost"
             android:inputType="numberDecimal"
-            android:layout_toEndOf="@id/add_drink_name_edit_text" />
+            android:layout_toEndOf="@id/add_drink_name_edit_text"
+            android:theme="@style/purple_edit_text" />
 
         <EditText
             android:id="@+id/add_drink_quantity_edit_text"
@@ -101,7 +104,8 @@
             android:autofillHints="@string/drink_quantity"
 
             android:inputType="number"
-            android:layout_toEndOf="@id/add_drink_cost_edit_text" />
+            android:layout_toEndOf="@id/add_drink_cost_edit_text"
+            android:theme="@style/purple_edit_text" />
 
         <Button
             android:id="@+id/add_drink_button"
