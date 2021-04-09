@@ -9,7 +9,6 @@
     <string name="drink_cost">Costo</string>
     <string name="drink_quantity">Quantità</string>
     <string name="welcome_username">Benvenuto %1$s</string>
-    <string name="drinks_initialized_chip_message">Il distributore automatico ora ha bibite da vendere</string>
     <string name="guest_name">Ospite</string>
     <string name="update_drink">Aggiorna</string>
     <string name="add_drink">Aggiungi</string>
@@ -30,4 +29,5 @@
     <string name="edit_button_image_content_description">Modifica</string>
     <string name="delete_button_image_content_description">Elimina</string>
     <string name="buy_button_image_content_description">Compra</string>
+    <string name="error_drink_buy_message">Errore durante l\'acquisto della bibita</string>
 </resources>

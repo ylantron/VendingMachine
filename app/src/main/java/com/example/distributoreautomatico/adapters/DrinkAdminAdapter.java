@@ -103,7 +103,7 @@ public class DrinkAdminAdapter extends BaseAdapter {
         ImageButton editButton = convertView.findViewById(R.id.drink_edit_button);
         editButton.setOnClickListener(v -> {
             // if information in the edit texts is not valid don't go further
-            if (isDrinkValid(drinkName, drinkCost, drinkQuantity))
+            if (!isDrinkValid(drinkName, drinkCost, drinkQuantity))
                 return;
 
             // if no errors were found execute the update
@@ -167,9 +167,9 @@ public class DrinkAdminAdapter extends BaseAdapter {
 
 
         // returns true if none of the edit texts have error
-        return drinkName.getError() != null
-                || drinkCost.getError() != null
-                || drinkQuantity.getError() != null;
+        return drinkName.getError() == null
+                && drinkCost.getError() == null
+                && drinkQuantity.getError() == null;
     }
 
     /**

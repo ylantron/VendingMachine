@@ -103,21 +103,22 @@ public class DrinkGuestAdapter extends BaseAdapter {
         Button buyButton = convertView.findViewById(R.id.buy_drink_button);
         buyButton.setOnClickListener(v -> {
             // removes 1 from quantity of the drink
-            daoDrink.updateDrink(
+            if (daoDrink.updateDrink(
                     drink.getId(),
                     drinkName.getText().toString(),
                     Float.parseFloat(drinkCost.getText().toString().replace(",", ".")),
                     Integer.parseInt(drinkQuantity.getText().toString()) - 1
-            );
+            )) {
 
-            // keep track of the profit
-            daoProfit.addOperation(drink);
+                // keep track of the profit
+                daoProfit.addOperation(drink);
 
-            // update the list
-            updateList();
+                // update the list
+                updateList();
 
-            // display a snack bar
-            Snackbar.make(parent, CONTEXT.getString(R.string.successful_drink_buy_message), Snackbar.LENGTH_SHORT).show();
+                // display a snack bar
+                Snackbar.make(parent, CONTEXT.getString(R.string.successful_drink_buy_message), Snackbar.LENGTH_SHORT).show();
+            } else Snackbar.make(parent, CONTEXT.getString(R.string.error_drink_buy_message), Snackbar.LENGTH_SHORT).show();
         });
 
         // disables the button if there are no more drinks

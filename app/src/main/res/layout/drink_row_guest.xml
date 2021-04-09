@@ -17,7 +17,8 @@
         android:padding="10dp"
         android:id="@+id/drink_cost_text_view"
         android:text="@string/drink_cost"
-        android:layout_toRightOf="@id/drink_name_text_view"/>
+        android:layout_toRightOf="@id/drink_name_text_view"
+        android:layout_toEndOf="@id/drink_name_text_view" />
 
     <TextView
         android:layout_width="@dimen/drink_quantity_dimension"
@@ -25,12 +26,15 @@
         android:id="@+id/drink_quantity_text_view"
         android:padding="10dp"
         android:text="@string/drink_quantity"
-        android:layout_toRightOf="@id/drink_cost_text_view"/>
+        android:layout_toRightOf="@id/drink_cost_text_view"
+        android:layout_toEndOf="@id/drink_cost_text_view" />
 
     <Button
+        android:id="@+id/buy_drink_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:id="@+id/buy_drink_button"
-        android:text="@string/buy_drink"/>
+        android:enabled="false"
+        android:text="@string/buy_drink"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), !continueAsGuestCheckbox.isChecked() ? AdminMenuActivity.class : GuestMenuActivity.class);
         intent.putExtra("username", !continueAsGuestCheckbox.isChecked() ? username : getString(R.string.guest_name));
 
-        // Clear the username EditText text and error messages
+        // Clear the error message
         usernameEditText.setError(null);
 
         // start the second activity

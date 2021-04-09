@@ -9,9 +9,15 @@
         android:roundIcon="@mipmap/ic_vendingmachine"
         android:supportsRtl="true"
         android:theme="@style/Theme.DistributoreAutomatico">
-        <activity android:name=".GuestMenuActivity"></activity>
-        <activity android:name=".AdminMenuActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".GuestMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AdminMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

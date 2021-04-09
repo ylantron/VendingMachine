@@ -29,7 +29,7 @@ public final class DaoDrink extends AbstractDao {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(getDatabaseCreateQuery(DATABASE_NAME));
+        db.execSQL(getDatabaseCreateQuery());
     }
 
     @Override
@@ -87,6 +87,10 @@ public final class DaoDrink extends AbstractDao {
                 // parameters in String.format()
                 databaseName
         );
+    }
+
+    protected String getDatabaseCreateQuery() {
+        return getDatabaseCreateQuery(DATABASE_NAME);
     }
 
     public int size() {
@@ -191,6 +195,11 @@ public final class DaoDrink extends AbstractDao {
 
         // return true if insert was successful (if id of the newly created item is not -1)
         return id != -1;
+    }
+
+    public boolean addDrink(String name, float cost, int quantity) {
+        Drink drink = new Drink(name, quantity, cost);
+        return addDrink(drink);
     }
 
     public boolean deleteDrink(int drinkId) {

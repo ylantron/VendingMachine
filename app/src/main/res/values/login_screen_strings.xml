@@ -6,6 +6,4 @@
     <string name="continue_as_guest_checkbox_label">Continue as guest</string>
 
     <string name="empty_username_error">Enter a username!</string>
-
-    <string name="drinks_initialized_chip_message">The vending machine now has some drinks to buy</string>
 </resources>

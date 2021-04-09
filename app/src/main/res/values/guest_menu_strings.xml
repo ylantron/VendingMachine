@@ -3,6 +3,7 @@
     <string name="buy_drink">Buy</string>
 
     <string name="successful_drink_buy_message">Drink bought</string>
+    <string name="error_drink_buy_message">Error while buying drink</string>
 
     <!-- image content description -->
     <string name="buy_button_image_content_description">Buy</string>

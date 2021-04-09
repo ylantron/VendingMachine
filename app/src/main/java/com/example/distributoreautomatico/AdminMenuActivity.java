@@ -54,7 +54,7 @@ public class AdminMenuActivity extends AppCompatActivity {
         EditText addDrinkQuantityEditText = findViewById(R.id.add_drink_quantity_edit_text);
 
         // check if the drink is valid (if it's not valid don't go further)
-        if (drinkAdminAdapter.isDrinkValid(addDrinkNameEditText, addDrinkCostEditText, addDrinkQuantityEditText))
+        if (!drinkAdminAdapter.isDrinkValid(addDrinkNameEditText, addDrinkCostEditText, addDrinkQuantityEditText))
             return;
 
         // extracting text from edit texts

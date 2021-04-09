@@ -30,7 +30,7 @@ public final class DaoProfit extends AbstractDao {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(getDatabaseCreateQuery(DATABASE_NAME));
+        db.execSQL(getDatabaseCreateQuery());
     }
 
     @Override
@@ -50,6 +50,10 @@ public final class DaoProfit extends AbstractDao {
                 // parameters in String.format()
                 databaseName
         );
+    }
+
+    protected String getDatabaseCreateQuery() {
+        return getDatabaseCreateQuery(DATABASE_NAME);
     }
 
     public int size() {
@@ -81,32 +85,6 @@ public final class DaoProfit extends AbstractDao {
     public boolean isEmpty() {
         // return true if there are no rows in the table
         return size() <= 0;
-    }
-
-    public Date now(TimeZone timeZone) { // TODO TO REFINE THIS METHOD
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor resultSet = db.rawQuery("SELECT CURRENT_TIMESTAMP AS now", null);
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss", Locale.getDefault());
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        Date date = new Date();
-
-        while (resultSet.moveToNext()) {
-            try {
-                date = sdf.parse(resultSet.getString(resultSet.getColumnIndex("now")));
-            } catch (ParseException ignored) {}
-        }
-
-        resultSet.close();
-
-        sdf.setTimeZone(timeZone);
-        String convertedDateTime = sdf.format(date);
-        Date convertDateTime = new Date();
-
-        try {
-            convertDateTime = sdf.parse(convertedDateTime);
-        } catch (ParseException ignored) {}
-        return convertDateTime;
     }
 
     public boolean addOperation(Drink drink) {
